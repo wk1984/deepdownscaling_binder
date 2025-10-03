@@ -38,7 +38,7 @@ RUN conda env create -f /app/requirements/deep4downscaling-cpu.yml && \
     conda clean -afy
 
 # 设置默认的 SHELL，使其自动激活新创建的 Conda 环境
-SHELL ["conda", "run", "-n", "deep4downscaling-gpu", "/bin/bash", "-c"]
+SHELL ["conda", "run", "-n", "deep4downscaling-cpu", "/bin/bash", "-c"]
 
 # 暴露 JupyterLab 端口
 EXPOSE 8888
