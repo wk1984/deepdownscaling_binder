@@ -1,5 +1,5 @@
 # 使用官方 NVIDIA CUDA 开发镜像作为基础，版本与项目要求匹配
-FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
+FROM ubuntu:20.04
 
 # 设置环境变量，避免安装过程中出现交互式提示
 ENV DEBIAN_FRONTEND=noninteractive
@@ -33,7 +33,7 @@ RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkg
 
 # 3. 使用仓库中自带的 yml 文件创建 Conda 环境
 # 这个过程会非常耗时
-RUN conda env create -f /app/requirements/deep4downscaling-gpu.yml && \
+RUN conda env create -f /app/requirements/deep4downscaling-cpu.yml && \
     # 清理 Conda 缓存以减小镜像体积
     conda clean -afy
 
