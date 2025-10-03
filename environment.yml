@@ -1,4 +1,4 @@
-name: deep4downscaling-gpu
+name: deep4downscaling-cpu
 channels:
   - conda-forge
   - pytorch
@@ -14,6 +14,7 @@ dependencies:
   - arrow=1.3.0=pyhd8ed1ab_1
   - asttokens=3.0.0=pyhd8ed1ab_1
   - async-lru=2.0.4=pyhd8ed1ab_1
+  - attr=2.5.1=h166bdaf_1
   - attrs=24.3.0=pyh71513ae_0
   - aws-c-auth=0.8.1=h205f482_0
   - aws-c-cal=0.8.1=h1a47875_3
@@ -36,6 +37,7 @@ dependencies:
   - babel=2.16.0=pyhd8ed1ab_1
   - beautifulsoup4=4.12.3=pyha770c72_1
   - binutils_impl_linux-64=2.43=h4bf12b8_2
+  - binutils_linux-64=2.43=h4852527_2
   - bleach=6.2.0=pyhd8ed1ab_1
   - blosc=1.21.6=he440d0b_1
   - bokeh=3.6.2=pyhd8ed1ab_1
@@ -61,16 +63,34 @@ dependencies:
   - colorama=0.4.6=pyhd8ed1ab_1
   - comm=0.2.2=pyhd8ed1ab_1
   - contourpy=1.3.1=py312h68727a3_0
-  - cuda-cudart=12.4.127=he02047a_2
-  - cuda-cudart_linux-64=12.4.127=h85509e4_2
-  - cuda-cupti=12.4.127=he02047a_2
-  - cuda-libraries=12.4.1=ha770c72_1
-  - cuda-nvrtc=12.4.127=he02047a_2
-  - cuda-nvtx=12.4.127=he02047a_2
-  - cuda-opencl=12.4.127=he02047a_1
-  - cuda-runtime=12.4.1=ha804496_0
-  - cuda-version=12.4=h3060b56_3
+  - cpuonly=2.0=0
+  - cuda-cccl_linux-64=12.8.55=ha770c72_0
+  - cuda-crt-dev_linux-64=12.8.61=ha770c72_0
+  - cuda-crt-tools=12.8.61=ha770c72_0
+  - cuda-cudart=12.8.57=h5888daf_0
+  - cuda-cudart-dev=12.8.57=h5888daf_0
+  - cuda-cudart-dev_linux-64=12.8.57=h3f2d84a_0
+  - cuda-cudart-static=12.8.57=h5888daf_0
+  - cuda-cudart-static_linux-64=12.8.57=h3f2d84a_0
+  - cuda-cudart_linux-64=12.8.57=h3f2d84a_0
+  - cuda-cuobjdump=12.8.55=hbd13f7d_0
+  - cuda-cupti=12.8.57=hbd13f7d_0
+  - cuda-driver-dev_linux-64=12.8.57=h3f2d84a_0
+  - cuda-nvcc=12.8.61=hcdd1206_0
+  - cuda-nvcc-dev_linux-64=12.8.61=he91c749_0
+  - cuda-nvcc-impl=12.8.61=h85509e4_0
+  - cuda-nvcc-tools=12.8.61=he02047a_0
+  - cuda-nvcc_linux-64=12.8.61=h04802cd_0
+  - cuda-nvdisasm=12.8.55=hbd13f7d_0
+  - cuda-nvrtc=12.8.61=hbd13f7d_0
+  - cuda-nvtx=12.8.55=hbd13f7d_0
+  - cuda-nvvm-dev_linux-64=12.8.61=ha770c72_0
+  - cuda-nvvm-impl=12.8.61=he02047a_0
+  - cuda-nvvm-tools=12.8.61=he02047a_0
+  - cuda-version=12.8=h5d125a7_3
+  - cudnn=9.3.0.75=h62a6f1c_2
   - curl=8.11.1=h332b0f4_0
+  - cusparselt=0.6.3.2=hdea8103_1
   - cycler=0.12.1=pyhd8ed1ab_1
   - cyrus-sasl=2.1.27=h54b06d7_7
   - cytoolz=1.0.1=py312h66e93f0_0
@@ -100,17 +120,19 @@ dependencies:
   - freetype=2.12.1=h267a509_2
   - fribidi=1.0.10=h36c2ea0_0
   - fsspec=2024.12.0=pyhd8ed1ab_0
-  - gcc_impl_linux-64=14.2.0=h6b349bd_1
+  - gcc_impl_linux-64=13.3.0=hfea6d02_1
+  - gcc_linux-64=13.3.0=hc28eda2_7
   - geos=3.13.0=h5888daf_0
   - gflags=2.2.2=h5888daf_1005
-  - gfortran_impl_linux-64=14.2.0=hc73f493_1
+  - gfortran_impl_linux-64=13.3.0=h10434e7_1
   - giflib=5.2.2=hd590300_0
   - glog=0.7.1=hbabe93e_0
   - gmp=6.3.0=hac33072_2
   - gmpy2=2.1.5=py312h7201bc8_3
   - graphite2=1.3.13=h59595ed_1003
   - gsl=2.7=he838d99_0
-  - gxx_impl_linux-64=14.2.0=h2c03514_1
+  - gxx_impl_linux-64=13.3.0=hdbfa832_1
+  - gxx_linux-64=13.3.0=h6834431_7
   - h11=0.14.0=pyhd8ed1ab_1
   - h2=4.1.0=pyhd8ed1ab_1
   - harfbuzz=10.1.0=h0b3b770_0
@@ -163,18 +185,20 @@ dependencies:
   - libbrotlicommon=1.1.0=hb9d3cd8_2
   - libbrotlidec=1.1.0=hb9d3cd8_2
   - libbrotlienc=1.1.0=hb9d3cd8_2
+  - libcap=2.71=h39aace5_0
   - libcblas=3.9.0=26_linux64_openblas
   - libclang-cpp19.1=19.1.6=default_hb5137d0_0
   - libclang13=19.1.6=default_h9c6a7e4_0
   - libcrc32c=1.1.2=h9c3ff4c_0
-  - libcublas=12.4.5.8=he02047a_2
-  - libcufft=11.2.1.3=he02047a_2
-  - libcufile=1.9.1.3=he02047a_2
+  - libcublas=12.8.3.14=h9ab20c4_0
+  - libcudss0=0.4.0.2=he55f5cd_2
+  - libcufft=11.3.3.41=hbd13f7d_0
+  - libcufile=1.13.0.11=h12f29b5_0
   - libcups=2.3.3=h4637d8d_4
-  - libcurand=10.3.5.147=he02047a_2
+  - libcurand=10.3.9.55=hbd13f7d_0
   - libcurl=8.11.1=h332b0f4_0
-  - libcusolver=11.6.1.9=he02047a_2
-  - libcusparse=12.3.1.170=he02047a_2
+  - libcusolver=11.7.2.55=h9ab20c4_0
+  - libcusparse=12.5.7.53=hbd13f7d_0
   - libde265=1.0.15=h00ab1b0_0
   - libdeflate=1.23=h4ddbbb0_0
   - libdrm=2.4.124=hb9d3cd8_0
@@ -185,8 +209,9 @@ dependencies:
   - libexpat=2.6.4=h5888daf_0
   - libffi=3.4.2=h7f98852_5
   - libgcc=14.2.0=h77fa898_1
-  - libgcc-devel_linux-64=14.2.0=h41c2201_101
+  - libgcc-devel_linux-64=13.3.0=h84ea5a7_101
   - libgcc-ng=14.2.0=h69a702a_1
+  - libgcrypt-lib=1.11.0=hb9d3cd8_2
   - libgfortran=14.2.0=h69a702a_1
   - libgfortran-ng=14.2.0=h69a702a_1
   - libgfortran5=14.2.0=hd5240d6_1
@@ -197,6 +222,7 @@ dependencies:
   - libgomp=14.2.0=h77fa898_1
   - libgoogle-cloud=2.34.0=h2b5623c_0
   - libgoogle-cloud-storage=2.34.0=h0121fbd_0
+  - libgpg-error=1.51=hbd13f7d_1
   - libgrpc=1.67.1=h25350d4_1
   - libheif=1.19.5=gpl_hc21c24c_100
   - libiconv=1.17=hd590300_2
@@ -206,16 +232,15 @@ dependencies:
   - libllvm19=19.1.6=ha7bfdaf_0
   - liblzma=5.6.3=hb9d3cd8_1
   - liblzma-devel=5.6.3=hb9d3cd8_1
-  - libmagma=2.8.0=h0af6554_0
+  - libmagma=2.8.0=h566cb83_2
   - libmagma_sparse=2.8.0=h0af6554_0
   - libnetcdf=4.9.2=nompi_h5ddbaa4_116
   - libnghttp2=1.64.0=h161d5f1_0
-  - libnpp=12.2.5.30=he02047a_2
+  - libnl=3.11.0=hb9d3cd8_0
   - libnsl=2.0.1=hd590300_0
   - libntlm=1.8=hb9d3cd8_0
-  - libnvfatbin=12.4.127=he02047a_2
-  - libnvjitlink=12.4.127=he02047a_2
-  - libnvjpeg=12.3.1.117=he02047a_2
+  - libnvjitlink=12.8.61=hbd13f7d_0
+  - libnvjpeg=12.3.5.57=h97fd463_0
   - libopenblas=0.3.28=pthreads_h94d23a6_1
   - libopengl=1.7.0=ha4b6fd6_2
   - libopentelemetry-cpp=1.18.0=hfcad708_1
@@ -226,16 +251,18 @@ dependencies:
   - libpq=17.2=h3b95a9b_1
   - libprotobuf=5.28.3=h6128344_1
   - libre2-11=2024.07.02=hbbce691_2
-  - libsanitizer=14.2.0=h2a3dede_1
+  - libsanitizer=13.3.0=heb74ff8_1
   - libsodium=1.0.20=h4ab18f5_0
   - libsqlite=3.47.2=hee588c1_0
   - libssh2=1.11.1=hf672d98_0
   - libstdcxx=14.2.0=hc0a3c3a_1
-  - libstdcxx-devel_linux-64=14.2.0=h41c2201_101
+  - libstdcxx-devel_linux-64=13.3.0=h84ea5a7_101
   - libstdcxx-ng=14.2.0=h4852527_1
+  - libsystemd0=257.2=h3dc2cb9_0
   - libthrift=0.21.0=h0e7cc3e_0
   - libtiff=4.7.0=hd9ff511_3
-  - libtorch=2.5.1=cpu_generic_h90be84d_11
+  - libtorch=2.5.1=cuda126_generic_h744fda7_210
+  - libudev1=257.2=h9a4d06a_0
   - libutf8proc=2.10.0=h4c51ac1_0
   - libuuid=2.38.1=h0b41bf4_0
   - libuv=1.50.0=hb9d3cd8_0
@@ -267,6 +294,7 @@ dependencies:
   - nbclient=0.10.2=pyhd8ed1ab_0
   - nbconvert-core=7.16.4=pyhd8ed1ab_3
   - nbformat=5.10.4=pyhd8ed1ab_1
+  - nccl=2.25.1.1=ha44e49d_0
   - ncurses=6.5=he02047a_1
   - nest-asyncio=1.6.0=pyhd8ed1ab_1
   - netcdf4=1.7.2=nompi_py312ha728dd9_101
@@ -276,8 +304,6 @@ dependencies:
   - notebook=7.3.2=pyhd8ed1ab_0
   - notebook-shim=0.2.4=pyhd8ed1ab_1
   - numpy=2.2.1=py312h7e784f5_0
-  - ocl-icd=2.3.2=hb9d3cd8_2
-  - opencl-headers=2024.10.24=h5888daf_0
   - openfst=1.8.3=h84d6215_3
   - openjpeg=2.5.3=h5fbd93e_0
   - openldap=2.6.9=he970967_0
@@ -309,8 +335,6 @@ dependencies:
   - pure_eval=0.2.3=pyhd8ed1ab_1
   - pyarrow=19.0.0=py312h7900ff3_0
   - pyarrow-core=19.0.0=py312h01725c0_0_cpu
-  - pybind11=2.13.6=pyh1ec8472_2
-  - pybind11-global=2.13.6=pyh415d2e4_2
   - pycparser=2.22=pyh29332c3_1
   - pygments=2.18.0=pyhd8ed1ab_1
   - pyparsing=3.2.1=pyhd8ed1ab_0
@@ -324,8 +348,8 @@ dependencies:
   - python-json-logger=2.0.7=pyhd8ed1ab_0
   - python-tzdata=2024.2=pyhd8ed1ab_1
   - python_abi=3.12=5_cp312
-  - pytorch=2.5.1=cpu_generic_py312_h6a4aa79_11
-  - pytorch-cuda=12.4=hc786d27_7
+  - pytorch=2.5.1=cuda126_generic_py312_h13c525e_210
+  - pytorch-mutex=1.0=cpu
   - pytz=2024.2=pyhd8ed1ab_1
   - pyyaml=6.0.2=py312h66e93f0_1
   - pyzmq=26.2.0=py312hbf22597_3
@@ -333,6 +357,7 @@ dependencies:
   - qt6-main=6.8.1=h588cce1_2
   - r-base=4.3.3=h5074ccb_16
   - rav1e=0.6.6=he8a937b_2
+  - rdma-core=55.0=h5888daf_0
   - re2=2024.07.02=h9925aae_2
   - readline=8.2=h8228510_1
   - referencing=0.35.1=pyhd8ed1ab_1
@@ -368,11 +393,12 @@ dependencies:
   - tktable=2.10=h8bc8fbc_6
   - tomli=2.2.1=pyhd8ed1ab_1
   - toolz=1.0.0=pyhd8ed1ab_1
-  - torchaudio=2.5.1=cpu_py312h6db6e6d_0
-  - torchvision=0.20.1=cpu_py312_h1d674c8_4
+  - torchaudio=2.5.1=cuda_126py312haeea92a_0
+  - torchvision=0.20.1=cuda126_py312_h17ccbaa_4
   - tornado=6.4.2=py312h66e93f0_0
   - tqdm=4.67.1=pyhd8ed1ab_1
   - traitlets=5.14.3=pyhd8ed1ab_1
+  - triton=3.1.0=cuda126py312h776fbae_5
   - types-python-dateutil=2.9.0.20241206=pyhd8ed1ab_0
   - typing-extensions=4.12.2=hd8ed1ab_1
   - typing_extensions=4.12.2=pyha770c72_1
@@ -425,4 +451,4 @@ dependencies:
   - zlib=1.3.1=hb9d3cd8_2
   - zstandard=0.23.0=py312hef9b889_1
   - zstd=1.5.6=ha6fb4c9_0
-prefix: /home/jose/miniforge3/envs/deep4downscaling-gpu
+prefix: /home/jose/miniforge3/envs/deep4downscaling-cpu
