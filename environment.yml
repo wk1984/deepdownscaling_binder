@@ -13,6 +13,7 @@ dependencies:
   - pandas==2.3.3
   - scipy
   - torch==2.5.1
+  - python=3.11.10
 prefix: /opt/conda
   
   
